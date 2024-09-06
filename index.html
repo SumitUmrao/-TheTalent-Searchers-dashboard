@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product Dashboard</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchBar" placeholder="Search products..." />
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="priceFilter">Filter by Price:</label>
+                <select id="priceFilter">
+                    <option value="all">All</option>
+                    <option value="0-5000">0-5000</option>
+                    <option value="5000-10000">5000-10000</option>
+                    <option value="10000-20000">10000-20000</option>
+                    <option value="20000+">20000+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="popularityFilter">Filter by Popularity:</label>
+                <select id="popularityFilter">
+                    <option value="all">All</option>
+                    <option value="0-10000">0-10000</option>
+                    <option value="10000-30000">10000-30000</option>
+                    <option value="30000-50000">30000-50000</option>
+                    <option value="50000+">50000+</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Sorting -->
+        <div class="sorting">
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy">
+                <option value="price-asc">Price (Ascending)</option>
+                <option value="price-desc">Price (Descending)</option>
+                <option value="popularity-asc">Popularity (Ascending)</option>
+                <option value="popularity-desc">Popularity (Descending)</option>
+            </select>
+        </div>
+
+        <!-- Product List -->
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Popularity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Products will be dynamically inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+
+        <!-- Modal for Product Details -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p><strong>Price:</strong> <span id="modalPrice"></span></p>
+                <p><strong>Popularity:</strong> <span id="modalPopularity"></span></p>
+                <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
